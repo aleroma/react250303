@@ -5,7 +5,7 @@ export const Restaurant = ({ restaurant }) => {
     const { name, menu, reviews } = restaurant;
     return (
         <div className="col">
-            <h2>{name}</h2>
+            <h2>Restaurant {name}</h2>
             <h3>Menu:</h3>
             <ul className="list-group list-group-flush">
                 {menu.map((menuItem) => (
