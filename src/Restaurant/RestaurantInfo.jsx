@@ -9,7 +9,6 @@ export const RestaurantInfo = ({restaurants, activeId}) => {
             <h2>Restaurant {name}</h2>
             <RestaurantMenu menu={menu}/>
             <RestaurantReviews reviews={reviews}/>
-
         </div>
     )
 }
