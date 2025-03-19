@@ -1,23 +1,22 @@
-import {useState} from "react";
-
-const minCount = 0;
-const maxCount = 5;
+import { useDishCounter } from "./useDishCounter";
 
 export const DishCounter = () => {
-    const [counter, setCounter] = useState(minCount);
+    const { counter, increment, decrement, MIN_COUNT, MAX_COUNT } = useDishCounter();
 
     return (
         <div className="DishCounter mt-2">
             <button
                 className="btn btn-outline-secondary btn-sm fs-5 py-0"
-                onClick={() => setCounter((current) => Math.max(current - 1, minCount))}
-                disabled={counter === minCount}>-
+                onClick={decrement}
+                disabled={counter === MIN_COUNT}>
+                <span>-</span>
             </button>
             <span className="mx-2">{counter}</span>
             <button
                 className="btn btn-outline-secondary btn-sm fs-5 py-0"
-                onClick={() => setCounter((current) => Math.min(current + 2, maxCount))}
-                disabled={counter === maxCount}>+
+                onClick={increment}
+                disabled={counter === MAX_COUNT}>
+                <span>+</span>
             </button>
         </div>
     )
