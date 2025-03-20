@@ -1,5 +1,5 @@
 import {RestaurantMenu} from "./RestaurantMenu.jsx";
-import {RestaurantReviews} from "./RestaurantReviews.jsx";
+import {Reviews} from "../Reviews/Reviews.jsx";
 
 export const RestaurantInfo = ({restaurants, activeId}) => {
     const activeRestaurant = restaurants.find(restaurant => restaurant.id === activeId);
@@ -8,7 +8,7 @@ export const RestaurantInfo = ({restaurants, activeId}) => {
         <div className="RestaurantInfo mt-3">
             <h2>Restaurant {name}</h2>
             <RestaurantMenu menu={menu}/>
-            <RestaurantReviews reviews={reviews}/>
+            <Reviews reviews={reviews}/>
         </div>
     )
 }
