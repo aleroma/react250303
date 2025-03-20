@@ -1,3 +1,16 @@
-.DishCounter {
+.Counter {
     user-select: none;
+    display: flex;
+    align-items: center; /* Центрирование по вертикали */
+}
+.PageFooter {
+    margin-top: 20px !important;
+}
+.PlusMinusButton {
+    border: none;
+    padding: 0;
+    background: transparent;
+}
+.ReviewForm {
+    max-width: 500px;
 }

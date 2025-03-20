@@ -8,7 +8,7 @@ export const RestaurantInfo = ({restaurants, activeId}) => {
         <div className="RestaurantInfo mt-3">
             <h2>Restaurant {name}</h2>
             <RestaurantMenu menu={menu}/>
-            <Reviews reviews={reviews}/>
+            <Reviews reviews={reviews} activeId={activeId}/>
         </div>
     )
 }

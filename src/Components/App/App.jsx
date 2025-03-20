@@ -7,7 +7,7 @@ import {PageFooter} from "../Layout/PageFooter.jsx";
 export const App = () => {
     return (
         <div className="d-flex flex-column" style={{minHeight: '100vh'}}>
-
+            <PageHeader/>
             <main className="container">
                 <MainContent route="RestaurantsPage" content={restaurants} />
             </main>
