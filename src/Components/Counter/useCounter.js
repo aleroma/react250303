@@ -1,15 +1,26 @@
-import {useState} from "react";
+import {useReducer} from "react";
 
-export const useCounter = (minCount, maxCount) => {
-    const [counter, setCounter] = useState(minCount);
+const MIN_COUNT = 0;
+const MAX_COUNT = 5;
+const INITIAL_STATE = {counter: MIN_COUNT};
 
-    const increment = () => {
-        setCounter((current) => Math.min(current + 1, maxCount));
+const reducer = (state, action) => {
+    switch (action) {
+        case "DECREMENT":
+            return {counter: Math.max(MIN_COUNT, state.counter - 1)}; // не менее MIN_COUNT
+        case "INCREMENT":
+            return {counter: Math.min(MAX_COUNT, state.counter + 1)}; // не более MAX_COUNT
+        default:
+            return state;
     }
+};
 
-    const decrement = () => {
-        setCounter((current) => Math.max(current - 1, minCount));
-    }
+export const useCounter = () => {
+    const [state, dispatch] = useReducer(reducer, INITIAL_STATE);
 
-    return {counter, increment, decrement};
-}
+    return {
+        counter: state.counter,
+        decrement: () => dispatch("DECREMENT"),
+        increment: () => dispatch("INCREMENT"),
+    };
+};

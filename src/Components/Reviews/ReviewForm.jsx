@@ -10,7 +10,7 @@ export function ReviewForm({activeId}) {
             <h4>Leave a review</h4>
             <input type="hidden" name="RestaurantId" value={activeId}/>
             <div>
-                Rating <Counter/>
+                Rating <Counter minCount="0" maxCount="5"/>
             </div>
             <div className="mt-3">
                 <label className="form-label">Your Name</label>
