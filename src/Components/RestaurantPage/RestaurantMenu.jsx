@@ -8,7 +8,7 @@ export const RestaurantMenu = ({menu}) => {
                 {menu.map((dish) => (
                     <li key={dish.id} className="list-group-item">
                         {dish.name} - {dish.price} $
-                        <Counter key={dish.id}/>
+                        <Counter key={dish.id} />
                     </li>
                 ))}
             </ul>

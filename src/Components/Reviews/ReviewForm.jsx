@@ -1,16 +1,13 @@
 import {Counter} from "../Counter/Counter.jsx";
+import {useRating} from "./useRating.js";
 
-function preventSubmit(event) {
-    event.preventDefault(); // отмена отправки формы
-}
-
-export function ReviewForm({activeId}) {
+export function ReviewForm({restaurantId}) {
     return (
-        <form className="ReviewForm bg-secondary-subtle rounded border p-4" onSubmit={preventSubmit}>
+        <form className="ReviewForm bg-secondary-subtle rounded border p-4">
             <h4>Leave a review</h4>
-            <input type="hidden" name="RestaurantId" value={activeId}/>
+            <input type="hidden" name="RestaurantId" value={restaurantId}/>
             <div>
-                Rating <Counter minCount="0" maxCount="5"/>
+                Rating <Counter key={restaurantId} customCounterHook={useRating}/>
             </div>
             <div className="mt-3">
                 <label className="form-label">Your Name</label>

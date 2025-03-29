@@ -1,8 +1,8 @@
 import {useReducer} from "react";
 
-const MIN_COUNT = 0;
+const MIN_COUNT = 1;
 const MAX_COUNT = 5;
-const INITIAL_STATE = {counter: MIN_COUNT};
+const INITIAL_STATE = {counter: MAX_COUNT};
 
 const reducer = (state, action) => {
     const {counter} = state;
@@ -16,7 +16,7 @@ const reducer = (state, action) => {
     }
 };
 
-export const useCounter = () => {
+export const useRating = () => {
     const [state, dispatch] = useReducer(reducer, INITIAL_STATE);
     const {counter} = state;
     const decrement = () => dispatch({type: "DECREMENT"});
