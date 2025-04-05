@@ -1,5 +1,5 @@
 import {ReviewList} from "./ReviewList.jsx";
-import {ReviewForm} from "./ReviewForm.jsx";
+import {ReviewForm} from "../ReviewForm/ReviewForm.jsx";
 
 export const Reviews = ({reviews, restaurantId}) => {
     return (
@@ -10,3 +10,4 @@ export const Reviews = ({reviews, restaurantId}) => {
         </div>
     )
 }
+

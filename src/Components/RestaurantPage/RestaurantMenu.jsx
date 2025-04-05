@@ -1,6 +1,9 @@
-import {Counter} from "../Counter/Counter.jsx";
+import { Counter } from "../Counter/Counter.jsx";
+import { useCounter } from '../Counter/useCounter.js';
 
-export const RestaurantMenu = ({menu}) => {
+export const RestaurantMenu = ({ menu }) => {
+    const { counter, increment, decrement } = useCounter(0, 0, 5);
+
     return (
         <div className="RestaurantMenu">
             <h3>Menu:</h3>
@@ -8,11 +11,14 @@ export const RestaurantMenu = ({menu}) => {
                 {menu.map((dish) => (
                     <li key={dish.id} className="list-group-item">
                         {dish.name} - {dish.price} $
-                        <Counter key={dish.id} />
+                        <Counter
+                            counter={counter}
+                            increment={increment}
+                            decrement={decrement}
+                        />
                     </li>
                 ))}
             </ul>
         </div>
-    )
-}
-
+    );
+};

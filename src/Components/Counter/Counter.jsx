@@ -1,22 +1,13 @@
-import {useCounter} from './useCounter.js';
-
-// the «useCounter» hook is used by default
-export const Counter = ({customCounterHook = useCounter}) => {
-    const {counter, decrement, increment} = customCounterHook();
-
+export const Counter = ({ counter, increment, decrement }) => {
     return (
-        <div className="Counter mt-2">
-            <button type="button"
-                    className="PlusMinusButton"
-                    onClick={decrement}>
-                <i className="fa-solid fa-square-minus fa-2x" style={{color: "#909dac"}}></i>
+        <div className="Counter d-flex align-items-center">
+            <button type="button" className="btn btn-outline-secondary" onClick={decrement}>
+                <i className="fa-solid fa-minus"></i>
             </button>
-            <span className="mx-2">{counter}</span>
-            <button type="button"
-                    className="PlusMinusButton"
-                    onClick={increment}>
-                <i className="fa-solid fa-square-plus fa-2x" style={{color: "#909dac"}}></i>
+            <span className="mx-3 fs-5">{counter}</span>
+            <button type="button" className="btn btn-outline-secondary" onClick={increment}>
+                <i className="fa-solid fa-plus"></i>
             </button>
         </div>
-    );
-};
+    )
+}

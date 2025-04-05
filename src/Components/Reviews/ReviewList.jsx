@@ -1,10 +1,10 @@
-import {ReviewListItem} from "./ReviewListItem.jsx";
-
 export function ReviewList({reviews}) {
     return (
         <ul className="list-group list-group-flush">
             {reviews.map((review) => (
-                <ReviewListItem review={review} key={review.id}/>
+                <li key={review.id} className="list-group-item">
+                    <q>{review.text}</q><br/><i>{review.user}</i>
+                </li>
             ))}
         </ul>
     )
