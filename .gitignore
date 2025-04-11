@@ -1,3 +1,5 @@
+.backup
+npm_run_dev.bat
 # Logs
 logs
 *.log
